@@ -278,7 +278,7 @@ const Api = () => {
                   filteredProviders.map(({ id, email, provider, selected, date }, i) => {
                     return (
                       <tr key={id}>
-                        <td>
+                        <td style={{ minWidth:'100px'}}>
                           {selected? (
                           <button type='button' onClick={()=>{getProvider(id);updateSelected(false)}}>
                             unselect
@@ -289,13 +289,13 @@ const Api = () => {
                           </button>
                           )}
                         </td>
-                        <td>{i + 1}</td>
-                        <td>{id}</td>
-                        <td>{email}</td>
-                        <td>{provider}</td>
-                        <td>{selected? "Yes" : "No"}</td>
+                        <td style={{ minWidth:'50px'}}>{i + 1}</td>
+                        <td style={{ minWidth:'50px'}}>{id}</td>
+                        <td style={{ minWidth:'200px'}}>{email}</td>
+                        <td style={{ minWidth:'150px'}}>{provider}</td>
+                        <td style={{ minWidth:'100px'}}>{selected? "Yes" : "No"}</td>
                         <td>{convertTime(date)}</td>
-                        <td>
+                        <td style={{ minWidth:'100px'}}>
                           <button type='button' onClick={() => deleteEmail(id)}>
                             x
                           </button>
@@ -309,7 +309,7 @@ const Api = () => {
           </div>
 
           <button
-          className="m-3 btn btn-sm btn-danger"
+          className="m-20"
           onClick={removeAllProviders}
         >
           Delete All
