@@ -1,0 +1,79 @@
+@import '../../styles/colors.scss';
+
+.wrapper {
+  width: 100%;
+  max-width: 680px;
+  min-width: 680px;
+  flex-grow: 1;
+  padding: 100px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.validation {
+  color: $blue;
+  font-size: 14px;
+  margin-top: 10px;
+}
+//
+.validation div {
+  margin: 5px 0;
+}
+
+.successIcon {
+  width: 100%;
+  max-width: 44px;
+  margin-bottom: 20px;
+}
+
+.line {
+  width: 100%;
+  max-width: 400px;
+  color: $light-grey;
+  height: 1px;
+  margin: 0 auto;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    min-width: 600px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    position: absolute;
+    width: 100%;
+    min-width: auto;
+    max-width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content {
+    background-color: $bg-color;
+    background: $bg-gradient;
+    width: 100%;
+    padding: 30px 20px;
+    margin-top: 60px;
+    height: auto;
+  }
+
+  .line {
+    margin-top: 20px;
+  }
+}

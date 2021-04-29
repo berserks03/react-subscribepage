@@ -1,0 +1,68 @@
+@import '../../styles/colors.scss';
+
+.circle {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid $light-grey;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 10px;    
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+    border: none;
+  }
+
+  &:hover .icon {
+    display: none;
+  }
+  
+  &:hover .iconWhite {
+    display: block;
+  }
+}
+
+.iconWhite {
+  display: none;
+}
+
+.facebook {
+  &:hover {
+    background-color: #4267b2;
+  }
+  &:active {
+    background-color: #2f4a80;
+  }
+}
+
+.instagram {
+  &:hover {
+    background-color: #c13584;
+  }
+  &:active {
+    background-color: #8f2762;
+  }
+}
+
+.twitter {
+  &:hover {
+    background-color: #1da1f2;
+  }
+  &:active {
+    background-color: #177fbf;
+  }
+}
+
+.youtube {
+  &:hover {
+    background-color: #ff0000;
+  }
+  &:active {
+    background-color: #cc0000;
+  }
+}

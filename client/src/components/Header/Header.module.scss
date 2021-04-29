@@ -1,0 +1,65 @@
+@import '../../styles/colors.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.logoWrapper {
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 100%;
+  max-width: 118px;
+}
+
+.navigation {
+  flex-shrink: 1;
+  margin-bottom: 7px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: $medium-grey;
+  font-size: 16px;
+  line-height: 26px;
+  margin: 0 15px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $white;
+    width: 100%;
+    padding: 10px 20px;
+    align-items: center;
+  }
+
+  .logoWrapper {
+    height: 46px;
+  }
+
+  .logo {
+    width: 35px;
+    height: 40px;
+    object-fit: cover;
+    object-position: 0 0;
+  }
+
+  .navigation {
+    margin: 0;
+  }
+
+  .navigation a {
+    font-size: 14px;
+    line-height: 26px;
+  }
+}

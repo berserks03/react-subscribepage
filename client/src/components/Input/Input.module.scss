@@ -1,0 +1,123 @@
+@import '../../styles/colors.scss';
+
+.form {
+  position: relative;
+  width: 663px;
+  max-width: 663px;
+  min-width: 400px;    
+  transition: all 0.3s ease;  
+
+  &:hover {
+    box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+  }
+
+  &:hover .button {
+    box-shadow: none;
+  }
+
+  &:focus-within {
+    box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+  }
+
+  &:focus-within .input {
+    border: 1px solid $blue;
+    outline: none;
+  }
+
+  &:focus-within .button {
+    border: 1px solid $blue;
+    border-left: none;
+    box-shadow: none;
+  }
+
+  &:focus-within .button  {
+    color: $blue;
+    opacity: 1;
+  }
+
+  &:focus-within .button:disabled  {
+    color: $dark-grey;
+    opacity: 0.3;
+  }
+}
+
+.line {
+  width: 4px;
+  height: 100%;
+  background-color: $blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.input {
+  border: 1px solid $light-grey;
+  background-color: $white;
+  padding: 23px 44px;
+  border-right: none;
+  width: 100%;
+  color: $dark-grey;
+
+  ::placeholder {
+    color: $medium-grey;
+  }
+}
+
+.button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0 40px;
+  background-color: $white;
+  border: 1px solid $light-grey;
+  border-left: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &:disabled  {
+    color: $dark-grey;
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .form {
+    width: 100%;
+    min-width: auto;
+    max-width: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  // .form {
+  //   width: 100%;
+  //   min-width: auto;
+  //   max-width: auto;
+  // }
+
+  .input {
+    padding: 18px 15px;
+  }
+
+  .button {
+    padding: 0 15px;
+  }
+}
+
