@@ -315,6 +315,8 @@ const Api = () => {
           Delete All
         </button>
 
+        <a href="http://localhost:8085/api/file" className="m-20" role="button" style={{display: 'flex', flexBasis: '100%', justifyContent: 'center'}} >Download CSV File</a>
+
         </div>
       </div>
     </section>
