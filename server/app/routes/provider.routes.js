@@ -1,7 +1,7 @@
 module.exports = app => {
   const providers = require("../controllers/provider.controller.js");
 
-  var router = require("express").Router();
+  let router = require("express").Router();
 
   // Create a new Provider
   router.post("/", providers.create);
@@ -23,6 +23,8 @@ module.exports = app => {
 
   // Delete all Providers
   router.delete("/", providers.deleteAll);
+
+  router.get('/api/file', providers.downloadFile);
 
   app.use('/api/providers', router);
 };

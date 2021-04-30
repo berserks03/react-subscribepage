@@ -1,6 +1,7 @@
 const db = require("../models");
 const Provider = db.providers;
 const Op = db.Sequelize.Op;
+const Json2csvParser = require('json2csv').Parser;
 
 const getPagination = (page, size) => {
   const limit = size ? +size : 10;
@@ -92,7 +93,7 @@ exports.update = (req, res) => {
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Provider was updated successfully."
+          message: `Provider with id=${id} was updated successfully.`
         });
       } else {
         res.send({
@@ -166,3 +167,16 @@ exports.findAllSelected = (req, res) => {
       });
     });
 };
+
+exports.downloadFile = (req, res) => {
+  Provider.findAll({where: { selected: true }, attributes: ['id', 'provider', 'email', 'selected', 'date']}).then(objects => {
+      const jsonProviders = JSON.parse(JSON.stringify(objects));
+      const csvFields = ['Id', 'Provider', 'Email', 'Selected', 'Date'];
+      const json2csvParser = new Json2csvParser({ csvFields });
+      const csvData = json2csvParser.parse(jsonProviders);
+
+      res.setHeader('Content-disposition', 'attachment; filename=providers.csv');
+      res.set('Content-Type', 'text/csv');
+      res.status(200).end(csvData);
+  });
+}

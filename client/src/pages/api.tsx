@@ -65,7 +65,7 @@ const Api = () => {
       providers &&
         setFilteredProviders(
           providers.sort((a: { date: Date }, b: { date: Date }) =>
-            a.date > b.date ? -1 : 1
+            a.date > b.date ? 1 : -1
           )
         );
     });

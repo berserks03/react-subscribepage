@@ -58,9 +58,7 @@ const Subscription = () => {
           console.log(event);
           setPostError(true);
         });
-      console.log(inputValue, 'before');
       setInputValue('');
-      console.log(inputValue, 'after');
       setCheckboxValue(false);
     }
   };
